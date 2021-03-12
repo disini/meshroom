@@ -87,11 +87,33 @@ You may need to adjust the folder `/usr/lib/nvidia-340` with the correct driver 
 
  - __Launch a 3D reconstruction in command line__
 
+ run setEnv.sh  ！！！
+
+ or ：
+ setup the env manually：
+ export PATH=$PATH:$PWD/aliceVision/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/lib:$PWD/aliceVision/lib 
+export PYTHONPATH=$PWD/lib 
+
+Attention: 
+Don't forget the 'export'!
+
+Then:
+
+
 ```bash
 # Windows: set PYTHONPATH=%CD% &&
 # Linux/macOS: PYTHONPATH=$PWD
 python bin/meshroom_batch --input INPUT_IMAGES_FOLDER --output OUTPUT_FOLDER
 ```
+for example:
+/usr/bin/python3m bin/meshroom_batch --input /home/ls/projects/3d_Recon/datasets/photos/Images-20210128T092219Z-001/Images -o /home/ls/projects/3d_Recon/output/Meshroom/results/202103121037
+
+or ：
+setup envs and invoke the program together once time:
+PATH=$PATH:$PWD/aliceVision/bin LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD/lib:$PWD/aliceVision/lib PYTHONPATH=$PWD/lib /usr/bin/python3m bin/meshroom_batch --input /home/ls/projects/3d_Recon/datasets/photos/Images-20210128T092219Z-001/Images -o /home/ls/projects/3d_Recon/output/Meshroom/results/202103121415
+
+
 
 
 ## FAQ
